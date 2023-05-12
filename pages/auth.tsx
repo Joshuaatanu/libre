@@ -3,7 +3,7 @@ import Input from "@/components/Input";
 import Image from "next/image";
 
 import axios from "axios";
-import netflixLogo from "@/public/images/logo.png";
+import netflixLogo from "@/public/images/real-white.png";
 import { signIn } from "next-auth/react";
 
 import { FcGoogle } from "react-icons/fc";
@@ -48,7 +48,7 @@ export default function Auth() {
   }, [email, name, password, login]);
 
   return (
-    <div className='relative h-full w-full bg-[url("/images/hero.jpg")] bg-no-repeat bg-center bg-fixed bg-cover'>
+    <div className='relative h-full w-full bg-[url("/images/library.webp")] bg-no-repeat bg-center bg-fixed bg-cover'>
       <div className="bg-black w-full h-full lg:bg-opacity-50">
         <nav className="px-12 py-5">
           {/* <img src="/images/logo.png" alt="Logo" className="h-12 " /> */}
@@ -133,7 +133,7 @@ export default function Auth() {
 
             <p className="text-neutral-500 mt-12">
               {variant === "login"
-                ? " First time using Netflix ?"
+                ? " First time using Libre ?"
                 : "Already have an account ?"}
               <span
                 onClick={toggleVariant}
