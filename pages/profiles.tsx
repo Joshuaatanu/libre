@@ -8,6 +8,7 @@ import { signOut } from "next-auth/react";
 import Image from "next/image";
 
 import netflixLogo from "@/public/images/real-white.png";
+import Link from "next/link";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -32,8 +33,11 @@ export default function profiles() {
   return (
     <div className="flex flex-row py-5 px-3 ">
       <Image src={netflixLogo} alt="Logo" className="h-12 w-52 " />
+      <Link href="/">
+        <p className=" text-white ml-6 text-lg mt-2 mr-10">Home</p>
+      </Link>
       <div className=" flex  ml-auto float-right   ">
-        <p className=" text-white mt-2 mr-10"> Hi, {user?.name}</p>
+        <p className=" text-white text-lg mt-2 mr-10"> Hi, {user?.name}</p>
         <button
           className=" px-4 py-2 bg-red-600 rounded-xl"
           onClick={() => signOut()}
