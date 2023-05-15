@@ -34,8 +34,25 @@ export default function profiles() {
     <div className="flex flex-row py-5 px-3 ">
       <Image src={netflixLogo} alt="Logo" className="h-12 w-52 " />
       <Link href="/">
-        <p className=" text-white ml-6 text-lg mt-2 mr-10">Home</p>
+        <p className=" text-white ml-6 text-lg mt-2 ml-[100px] hover:text-red-500 transition duration-200">
+          Home
+        </p>
       </Link>
+      <Link href="/">
+        <p className=" text-white ml-6 text-lg mt-2 ml-[100px] hover:text-red-500 transition duration-200">
+          Library
+        </p>
+      </Link>
+      <Link href="/">
+        <p className=" text-white ml-6 text-lg mt-2 ml-[100px] hover:text-red-500 transition duration-200">
+          Downloads
+        </p>
+      </Link>
+      <Link href="/profiles">
+          <p className=" text-red-500 ml-6 text-lg mt-2 ml-[100px] hover:text-red-100 transition duration-200">
+            Profile
+          </p>
+        </Link>
       <div className=" flex  ml-auto float-right   ">
         <p className=" text-white text-lg mt-2 mr-10"> Hi, {user?.name}</p>
         <button
