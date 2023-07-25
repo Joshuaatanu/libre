@@ -11,7 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         const { currentUser } = await serverAuth(req, res);
 
-        const favoriteMovies = await prismadb.book.findMany({
+        const favoriteBooks = await prismadb.book.findMany({
             where: {
                 id: {
                     in: currentUser?.favoriteIds,
@@ -19,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             }
         });
 
-        return res.status(200).json(favoriteMovies);
+        return res.status(200).json(favoriteBooks);
     } catch (error) {
         console.log(error);
         return res.status(500).end();
