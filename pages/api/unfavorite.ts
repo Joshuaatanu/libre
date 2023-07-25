@@ -6,7 +6,7 @@ import { without } from "lodash";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    if (req.method !== 'POST') {
+    if (req.method !== 'POST') { //get request
       return res.status(405).end();
     }
 

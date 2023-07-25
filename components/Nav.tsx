@@ -1,14 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/jsx-no-undef */
 /* eslint-disable react-hooks/rules-of-hooks */
+import Link from "next/link";
 import React from "react";
 import { NextPageContext } from "next";
 import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { signOut } from "next-auth/react";
-import Image from "next/image";
-
-import netflixLogo from "@/public/images/real-white.png";
-import Link from "next/link";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -25,14 +24,18 @@ export async function getServerSideProps(context: NextPageContext) {
   };
 }
 
-export default function profiles() {
+import netflixLogo from "@/public/images/real-white.png";
+export default function Nav() {
   const router = useRouter();
 
   const { data: user } = useCurrentUser();
-
   return (
     <div className="flex flex-row py-5 px-3 ">
-      <Image src={netflixLogo} alt="Logo" className="h-12 w-52 " />
+      <img
+        src="../public/images/real-white.png"
+        alt="Logo"
+        className="h-12 w-52 "
+      />
       <Link href="/">
         <p className=" text-white ml-6 text-lg mt-2 ml-[100px] hover:text-red-500 transition duration-200">
           Home
