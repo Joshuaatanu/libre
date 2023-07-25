@@ -16,11 +16,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       throw new Error('Not signed in');
     }
 
-    const { movieId } = req.body;
+    const { bookId } = req.body;
 
-    const existingMovie = await prismadb.movie.findUnique({
+    const existingMovie = await prismadb.book.findUnique({
       where: {
-        id: movieId,
+        id: bookId,
       }
     });
 
@@ -38,7 +38,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       throw new Error('Invalid email');
     }
 
-    const updatedFavoriteIds = without(user.favoriteIds, movieId);
+    const updatedFavoriteIds = without(user.favoriteIds, bookId);
 
     const updatedUser = await prismadb.user.update({
       where: {
